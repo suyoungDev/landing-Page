@@ -26,18 +26,6 @@
       </nav>
     </header>
 
-    <form action="https://www.freecodecamp.com/email-submit" id="form-email">
-      <p>plz sign up to email-list</p>
-      <input
-        type="email"
-        name="email"
-        id="controls"
-        required
-        placeholder="Email"
-      />
-      <input type="submit" value="Sign Up" id="submit" />
-    </form>
-
     <section id="cat_info">
       <h2>Cat is very sensitive animal</h2>
       <p>
@@ -77,14 +65,23 @@
       </p>
 
       <div class="video">
-        <video
+        <iframe
+          id="video"
+          width="600"
+          height="400"
+          height="auto"
+          src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc?rel=0&amp;controls=0&amp;showinfo=0"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <!-- <video
           src="#"
           width="320"
           height="240"
           type="video/mp4"
           controls
           id="video"
-        ></video>
+        ></video> -->
       </div>
     </section>
 
@@ -158,7 +155,7 @@
       </p>
       <div class="pricing" id="pricing_tag">
         <div class="prc" id="daily">
-          <h1>Daily</h1>
+          <div class="level">Daily</div>
           <h2>$600</h2>
           <ol>
             <li>Lorem, ipsum.</li>
@@ -169,7 +166,7 @@
         </div>
 
         <div class="prc" id="three">
-          <h1>3days</h1>
+          <div class="level">3days</div>
           <h2>$900</h2>
           <ol>
             <li>Lorem, ipsum.</li>
@@ -180,7 +177,7 @@
         </div>
 
         <div class="prc" id="seven">
-          <h1>7days</h1>
+          <div class="level">7days</div>
           <h2>$1200</h2>
           <ol>
             <li>Lorem ipsum dolor sit amet.</li>
@@ -191,6 +188,18 @@
         </div>
       </div>
     </section>
+
+    <form action="https://www.freecodecamp.com/email-submit" id="form-email">
+      <p>please sign up to our email-list</p>
+      <input
+        type="email"
+        name="email"
+        id="controls"
+        required
+        placeholder="Enter your Email address"
+      />
+      <input type="submit" value="Sign Up" id="submit" />
+    </form>
   </body>
 
   <footer>

@@ -1,8 +1,7 @@
-/* User Story #13: The navbar should always be at the top of the viewport.
+/* 
 
-User Story #14: My product landing page should have at least one media query.
+User Story #14: My product landing page should have at least one media query. */
 
-User Story #15: My product landing page should utilize CSS flexbox at least once. */
 :root {
   --padding: 0.5rem;
   --font-head: 1.2rem;
@@ -14,6 +13,9 @@ User Story #15: My product landing page should utilize CSS flexbox at least once
   --back-color: rgba(97, 204, 181, 1);
   --logo-color: #ffcccc;
   --mint-color: rgba(97, 204, 181, 0.746);
+  --grey-color: rgb(88, 88, 88);
+  --light-grey-color: rgb(148, 148, 148);
+  --white-color: rgb(235, 235, 235);
 }
 
 *  {
@@ -26,13 +28,23 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  background-color: var(--white-color);
+  margin: 0 auto;
 }
 
 section {
   padding: 40px 50px 40px 50px;
+  text-align: center;
+  border-bottom: solid var(--light-grey-color) 1px;
+  width: 70%;
 }
 
-#header {
+#cat_info {
+  margin-top: 60px;
+}
+
+header {
   background-color: var(--back-color);
   width: 100%;
   display: flex;
@@ -42,14 +54,15 @@ section {
   align-items: center;
   padding: 10px;
 
-  position: sticky;
+  position: fixed;
   top: 0;
+  height: 50px;
 }
 
 .logo {
   display: flex;
   color: var(--logo-color);
-  align-items: baseline;
+  align-items: center;
   padding-left: calc(var(--padding) * 2);
   font-size: var(--font-head);
 }
@@ -89,6 +102,10 @@ form {
   padding: 2rem;
 }
 
+form p {
+  color: var(--grey-color);
+}
+
 #controls {
   width: 300px;
   margin: 10px;
@@ -109,26 +126,35 @@ form input {
 
 /* CAT */
 
+iframe {
+  max-width: 560px;
+  width: 100%;
+}
+
 /* PRICING */
 
 .pricing {
   display: flex;
   flex-direction: row;
-  margin: 20px;
+  justify-content: center;
+  margin-top: 60px;
+  width: 90%;
   /* justify-content: space-around; */
 }
 
 .prc {
-  justify-content: space-between;
   margin: 10px;
-  padding: 30px;
   border-radius: 7px;
+  background: rgba(255, 255, 255, 0.404);
 }
 
-.prc h1 {
+.prc > .level {
   font-weight: bolder;
-  color: white;
-  font-size: calc(var(--font-head) * 2);
+  color: black;
+  font-size: calc(var(--font-head));
+  padding: 15px 0;
+  background-color: var(--mint-color);
+  width: 100%;
 }
 
 .prc h2 {
@@ -141,27 +167,41 @@ form input {
   font-size: calc(var(--font-menu) * 0.8);
   text-align: left;
   color: rgb(88, 88, 88);
+  list-style: none;
+  margin-top: 10px;
 }
 
 #daily {
-  background-color: var(--logo-color);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex: 1 1 25%;
+  border: var(--grey-color) solid 1px;
+  max-width: 250px;
 }
 
 #three {
-  background-color: var(--logo-color);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex: 1 1 25%;
+  border: var(--grey-color) solid 1px;
+  max-width: 250px;
 }
 
 #seven {
-  background-color: var(--logo-color);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex: 1 1 25%;
+  border: var(--grey-color) solid 1px;
+  max-width: 250px;
+}
+
+#price_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn {
@@ -171,8 +211,9 @@ form input {
   color: white;
   font-size: 15px;
   font-weight: lighter;
-  /* border: solid 4px rgba(96, 134, 134, 0.363); */
   border: none;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .btn:hover,
@@ -186,7 +227,7 @@ form input {
 /* footer */
 footer {
   background-color: var(--back-color);
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -201,4 +242,18 @@ footer {
   display: flex;
   font-display: row;
   align-items: right;
+}
+
+@media screen and (max-width: 768px) {
+  #nav-bar ul {
+    flex-direction: column;
+  }
+
+  .pricing {
+    flex-direction: column;
+
+    section {
+      width: 90%;
+    }
+  }
 }
